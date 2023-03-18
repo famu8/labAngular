@@ -1,16 +1,8 @@
 <h1>Hola mundo</h1>
 <h2>{{ title +" "+ "hola" }}</h2>
-<div>
-<label>Name: </label>
-<span>{{ game.name }}</span>
-</div>
-<div>
-<label>Years from release: </label>
-<span>{{ game.getYearsFromRelease() }}</span>
-</div>
-<div>
-  <label>
-    mando nombre:
-  </label>
-  <span>{{mando.name}}</span>
+<div *ngFor="let game of games">
+  <p>{{game.name}}</p>
+  <p>{{game.getYearsFromRelease()}}</p>
+  <img src="{{game.imageUrl}}" style="max-width: 240px"/>
+  <app-card-game/>
 </div>
