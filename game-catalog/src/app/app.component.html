@@ -1,8 +1,5 @@
 <h1>Hola mundo</h1>
-<h2>{{ title +" "+ "hola" }}</h2>
+<h2>{{ title }}</h2>
 <div *ngFor="let game of games">
-  <p>{{game.name}}</p>
-  <p>{{game.getYearsFromRelease()}}</p>
-  <img src="{{game.imageUrl}}" style="max-width: 240px"/>
-  <app-card-game/>
+  <app-card-game [game]="game"/>
 </div>
