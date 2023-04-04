@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Game } from './Model/game.model';
+import  { Seller } from './Model/seller.model';
 
 
 @Component({
@@ -11,8 +12,14 @@ import { Game } from './Model/game.model';
 export class AppComponent {
   title = 'Catalogo de juegos';
   games: Game[];
+  showSellerList: boolean=false;
+  sellers: Seller[];
   constructor() {
     console.log('** Constructor called **');
+
+    this.showSellerList = false;
+    this.sellers = [];
+
     this.games = [
       new Game
         ('Super Mario Bros',
@@ -62,12 +69,22 @@ export class AppComponent {
          },
       ]
       ),
-
-      new Game('Sonic', '26 June 1981',
+      new Game('Sonic',
+      '26 June 1981',
       'https://raw.githubusercontent.com/Lemoncode/angular-sample-app-2023/main/media/sonic-frontiers.webp',
        []
        ),
     ];
   }
+  ngOnInit(): void {}
+
+  onShowSellerList(sellers: Seller[]) {
+    this.showSellerList = true;
+    this.sellers = sellers;
+  }
+  onCloseSellerList() {
+    this.showSellerList = false;
+  }
+
 }
 
