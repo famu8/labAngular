@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Game } from './Model/game.model';
-import  { Seller } from './Model/seller.model';
+
 
 
 @Component({
@@ -10,81 +9,9 @@ import  { Seller } from './Model/seller.model';
 })
 
 export class AppComponent {
-  title = 'Catalogo de juegos';
-  games: Game[];
-  showSellerList: boolean=false;
-  sellers: Seller[];
-  constructor() {
-    console.log('** Constructor called **');
-
-    this.showSellerList = false;
-    this.sellers = [];
-
-    this.games = [
-      new Game
-        ('Super Mario Bros',
-        '13 September 1985',
-        'https://raw.githubusercontent.com/Lemoncode/angular-sample-app-2023/main/media/super-mario.webp',
-        [
-           {
-             id: 1,
-             name: 'Old shop',
-             price: 95,
-             amount: 2,
-             isAvailable: true,
-             },
-             {
-             id: 2,
-             name: 'New shop',
-             price: 115,
-             amount: 1,
-             isAvailable: true,
-             },
-             {
-             id: 3,
-             name: 'Regular shop',
-             price: 135,
-             amount: 0,
-             isAvailable: false,
-             }
-        ]
-        ),
-      new Game('Legend of Zelda',
-      '21 February 1986',
-      'https://raw.githubusercontent.com/Lemoncode/angular-sample-app-2023/main/media/legend-zelda.webp',
-       [
-         {
-         id: 3,
-         name: 'Old shop',
-         price: 125,
-         amount: 0,
-         isAvailable: false,
-         },
-         {
-         id: 4,
-         name: 'New shop',
-         price: 145,
-         amount: 1,
-         isAvailable: true,
-         },
-      ]
-      ),
-      new Game('Sonic',
-      '26 June 1981',
-      'https://raw.githubusercontent.com/Lemoncode/angular-sample-app-2023/main/media/sonic-frontiers.webp',
-       []
-       ),
-    ];
+  title = 'Catalogo de juegos'; 
+  constructor() {}
+  ngOnInit(): void {
   }
-  ngOnInit(): void {}
-
-  onShowSellerList(sellers: Seller[]) {
-    this.showSellerList = true;
-    this.sellers = sellers;
-  }
-  onCloseSellerList() {
-    this.showSellerList = false;
-  }
-
 }
 
