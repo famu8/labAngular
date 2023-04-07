@@ -7,6 +7,9 @@ import { CardGameComponent } from './pages/game-list/card-game/card-game.compone
 import { SellerListComponent } from './seller-list/seller-list.component';
 import { GameListComponent } from './pages/game-list/game-list.component';
 import { GameEditComponent } from './pages/game-edit/game-edit.component';
+import { FormsModule } from '@angular/forms';
+import { FieldErrorDisplayComponent } from './common/field-error-display/field-error-display.component';
+
 
 
 const appRoutes: Routes = [
@@ -22,12 +25,13 @@ const appRoutes: Routes = [
     CardGameComponent,
     SellerListComponent,
     GameListComponent,
-    GameEditComponent
+    GameEditComponent,
+    FieldErrorDisplayComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    RouterModule.forRoot(appRoutes),
+    FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
